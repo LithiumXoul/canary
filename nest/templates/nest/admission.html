@@ -1,0 +1,28 @@
+{% extends 'nest/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-body h-20 border-info">
+                <h4>Admission</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class=" embed-responsive embed-responsive-16by9">
+            <iframe
+            class="embed-responsive-item"
+            src="{% static 'pdf_plugin/web/viewer.html' %}?file=/media/uploads/admission_pdf/admission.pdf"
+            style="border: none;" ></iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

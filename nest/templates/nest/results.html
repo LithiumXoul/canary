@@ -1,0 +1,27 @@
+{% extends 'nest/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-body h-20 border-info">
+                <h4>Results</h4>
+            </div>
+        </div>
+    </div>
+    {% for result in results %}
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-body h-20">
+                    <a href="{% url 'view_result' result.id %}"><h5>{{ result.batch }} result for the exam year {{ result.exam_year }}</h5></a>
+                    <p><small>{{ result.date }}</small></p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
